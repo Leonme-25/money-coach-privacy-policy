@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy · Money Coach</title>
+  <style>
+    :root {
+      --bg: #0D0F12;
+      --surface: #14171C;
+      --border: #21252D;
+      --text: #F5F6F8;
+      --text-2: rgba(245,246,248,0.78);
+      --text-3: rgba(245,246,248,0.55);
+      --accent: #C6F91F;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+    .logo { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #1A1D24, #0D0F12); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); }
+    .logo svg { width: 26px; height: 26px; }
+    h1 { font-size: 34px; margin: 0; letter-spacing: -0.5px; }
+    .meta { color: var(--text-3); font-size: 13px; margin-top: 4px; }
+    h2 { font-size: 22px; margin: 40px 0 12px; letter-spacing: -0.3px; border-left: 3px solid var(--accent); padding-left: 12px; }
+    p, li { color: var(--text-2); }
+    a { color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--text); font-weight: 600; background: var(--surface); }
+    .tldr { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 22px; margin: 24px 0; }
+    .tldr strong { color: var(--accent); }
+    code { background: var(--surface); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: var(--accent); }
+    .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; background: rgba(198,249,31,0.12); color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 60 60" fill="none" stroke="#C6F91F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="10,52 10,18 30,40 50,8 50,52" />
+        </svg>
+      </span>
+      <div>
+        <h1>Privacy Policy</h1>
+        <div class="meta">Money Coach · Last updated <time>2026-05-21</time></div>
+      </div>
+    </header>
+
+    <div class="tldr">
+      <p><strong>TL;DR</strong> — Money Coach is an offline-first finance app. Everything you enter — accounts, transactions, goals, balances, PIN — stays on <em>your</em> device. We don't have servers, we don't have your data, and we never will.</p>
+    </div>
+
+    <h2>1. Who runs Money Coach</h2>
+    <p>Money Coach is a personal-finance education app made by an independent developer ("we", "us", "our"). The app is provided as-is for educational and personal-tracking purposes.</p>
+    <p>If you need to reach us, please contact us via the email address listed on the Google Play Store listing.</p>
+
+    <h2>2. The short version</h2>
+    <table>
+      <tr><th>What you might worry about</th><th>What actually happens</th></tr>
+      <tr><td>Does the app collect my financial data?</td><td><span class="pill">No</span> Nothing leaves your phone.</td></tr>
+      <tr><td>Does it send my data to a server?</td><td><span class="pill">No</span> There is no backend. The app makes zero network calls for your personal data.</td></tr>
+      <tr><td>Do I need to create an account?</td><td><span class="pill">No</span> No sign-up, no email, no phone number.</td></tr>
+      <tr><td>Are there ads or trackers?</td><td><span class="pill">No</span> No analytics SDK, no ad network, no third-party tracking.</td></tr>
+      <tr><td>Do you sell my data?</td><td><span class="pill">No</span> We have no data to sell.</td></tr>
+      <tr><td>Can the developer see my balances?</td><td><span class="pill">No</span> Your accounts and transactions are stored on your device only.</td></tr>
+    </table>
+
+    <h2>3. What data Money Coach stores ON YOUR DEVICE</h2>
+    <p>You enter this data yourself. It is stored <strong>only on your phone</strong>, in the app's local storage. We do not have access to it.</p>
+    <ul>
+      <li><strong>Accounts</strong> — names, types (cash/bank/wallet), currency, balances, notes</li>
+      <li><strong>Transactions</strong> — amounts, categories, dates, optional notes</li>
+      <li><strong>Goals</strong> — names, target amounts, monthly contribution, optional photo</li>
+      <li><strong>Budget rule selection</strong> (e.g. 50/30/20)</li>
+      <li><strong>Gamification state</strong> — XP, streak count, unlocked badges</li>
+      <li><strong>Preferences</strong> — your chosen name, avatar emoji, theme, haptics, notification settings</li>
+      <li><strong>App PIN</strong> (if you enable it) — stored using your device's secure enclave (<code>expo-secure-store</code>, Keychain on iOS / Keystore on Android)</li>
+    </ul>
+    <p>You can wipe ALL of this in one tap via <strong>Settings → Reset all data</strong>. Uninstalling the app also deletes everything.</p>
+
+    <h2>4. What data Money Coach does NOT store</h2>
+    <ul>
+      <li>Your real name, email, phone number, address, government ID, or any identifier</li>
+      <li>Your bank login, card numbers, or any credentials</li>
+      <li>Your location</li>
+      <li>Your contacts or address book</li>
+      <li>Your microphone or camera feed (no recording)</li>
+      <li>Any data on a server — there is no server</li>
+    </ul>
+
+    <h2>5. Permissions Money Coach requests</h2>
+    <p>The app requests only the minimum needed to function. You can deny any of these and the app will keep working (with reduced features).</p>
+    <h3>Notifications (<code>POST_NOTIFICATIONS</code>)</h3>
+    <p><strong>Why:</strong> To send you local reminders that <em>you</em> schedule — daily money check-ins, streak nudges, and goal-progress prompts.<br/>
+    <strong>What happens:</strong> All notifications are scheduled locally on your device. Money Coach has no push-notification server.<br/>
+    <strong>Opt-out:</strong> Settings → Notifications master toggle, or via your phone's system settings.</p>
+    <h3>Photos (<code>READ_MEDIA_IMAGES</code>)</h3>
+    <p><strong>Why:</strong> So you can attach a personal photo to a savings goal (e.g. a phone you want to buy, a place you want to visit). It's purely visual motivation.<br/>
+    <strong>What happens:</strong> The photo is read from your library and stored in the app's local storage as a small base64 thumbnail. The photo never leaves your device.<br/>
+    <strong>Opt-out:</strong> Deny the prompt; goals will use an emoji instead.</p>
+
+    <h2>6. Third parties</h2>
+    <p>Money Coach contains <strong>no</strong> third-party analytics, advertising, crash reporting, telemetry, or attribution SDKs.</p>
+    <p>We use a handful of standard open-source Expo modules for the app's UI and functionality (e.g. <code>expo-router</code>, <code>expo-notifications</code>, <code>expo-secure-store</code>, <code>expo-image-picker</code>). These modules execute entirely on your device and do not transmit your data anywhere.</p>
+
+    <h2>7. Children's privacy</h2>
+    <p>Money Coach is designed for general audiences (recommended 13+). We do not knowingly collect any data — from anyone — so we have no children's data to mishandle.</p>
+
+    <h2>8. Educational disclaimer</h2>
+    <p>Money Coach is an <strong>educational and personal-tracking tool</strong>. It is <strong>not financial advice, investment advice, tax advice, or legal advice.</strong> The financial simulators use standard textbook formulas and are clearly labelled "Educational only" in-app. Always consult a licensed professional before making real financial decisions.</p>
+
+    <h2>9. Your rights</h2>
+    <p>Because we don't collect or hold your data, there's nothing for us to delete or transfer. <strong>You own your data, on your phone.</strong> You can:</p>
+    <ul>
+      <li><strong>Export</strong> a PDF report from Settings → Export</li>
+      <li><strong>Reset all data</strong> in one tap from Settings</li>
+      <li><strong>Uninstall the app</strong> to remove everything</li>
+    </ul>
+
+    <h2>10. Changes to this policy</h2>
+    <p>If we ever change how the app handles data, we will update this policy and announce the change in-app and in the Play Store release notes. The current architecture is intentionally offline-first.</p>
+
+    <h2>11. Contact</h2>
+    <p>For any privacy question, please reach us via the developer email shown on the Money Coach Play Store listing.</p>
+
+    <footer>
+      © Money Coach. This page is intentionally a single static HTML file so it can be hosted on GitHub Pages, Notion, Vercel, or any simple static host without dependencies.
+    </footer>
+  </div>
+</body>
+</html>
