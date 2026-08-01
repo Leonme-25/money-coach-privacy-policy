@@ -45,89 +45,60 @@
       </span>
       <div>
         <h1>Privacy Policy</h1>
-        <div class="meta">Money Coach · Last updated <time>2026-05-21</time></div>
+        <div class="meta">Money Coach · Last updated <time datetime="2026-08-01">2026-08-01</time></div>
       </div>
     </header>
 
     <div class="tldr">
-      <p><strong>TL;DR</strong> — Money Coach is an offline-first finance app. Everything you enter — accounts, transactions, goals, balances, PIN — stays on <em>your</em> device. We don't have servers, we don't have your data, and we never will.</p>
+      <p><strong>TL;DR</strong> — Your financial ledger stays on your phone. No analytics or ads. Optional Premium uses <em>Google Play Billing</em> and <em>RevenueCat</em> only to verify purchases — not to upload your money history.</p>
     </div>
 
     <h2>1. Who runs Money Coach</h2>
-    <p>Money Coach is a personal-finance education app made by an independent developer ("we", "us", "our"). The app is provided as-is for educational and personal-tracking purposes.</p>
-    <p>If you need to reach us, please contact us via the email address listed on the Google Play Store listing.</p>
+    <p>Money Coach is a personal-finance education app made by an independent developer. Contact us via the email on the Google Play Store listing.</p>
 
     <h2>2. The short version</h2>
     <table>
       <tr><th>What you might worry about</th><th>What actually happens</th></tr>
-      <tr><td>Does the app collect my financial data?</td><td><span class="pill">No</span> Nothing leaves your phone.</td></tr>
-      <tr><td>Does it send my data to a server?</td><td><span class="pill">No</span> There is no backend. The app makes zero network calls for your personal data.</td></tr>
-      <tr><td>Do I need to create an account?</td><td><span class="pill">No</span> No sign-up, no email, no phone number.</td></tr>
-      <tr><td>Are there ads or trackers?</td><td><span class="pill">No</span> No analytics SDK, no ad network, no third-party tracking.</td></tr>
-      <tr><td>Do you sell my data?</td><td><span class="pill">No</span> We have no data to sell.</td></tr>
-      <tr><td>Can the developer see my balances?</td><td><span class="pill">No</span> Your accounts and transactions are stored on your device only.</td></tr>
+      <tr><td>Does the app collect my financial ledger?</td><td><span class="pill">No</span> Accounts, transactions, goals, and balances stay on your phone.</td></tr>
+      <tr><td>Does it send my money data to a Money Coach server?</td><td><span class="pill">No</span> There is no ledger backend.</td></tr>
+      <tr><td>Do I need to create an account?</td><td><span class="pill">No</span> No sign-up for the core app.</td></tr>
+      <tr><td>Are there ads or trackers?</td><td><span class="pill">No</span> No analytics SDK, no ad network.</td></tr>
+      <tr><td>What about Premium?</td><td>Purchases go through <strong>Google Play Billing</strong>. <strong>RevenueCat</strong> verifies entitlements using billing identifiers — not your transaction history.</td></tr>
     </table>
 
-    <h2>3. What data Money Coach stores ON YOUR DEVICE</h2>
-    <p>You enter this data yourself. It is stored <strong>only on your phone</strong>, in the app's local storage. We do not have access to it.</p>
+    <h2>3. What stays on your device</h2>
     <ul>
-      <li><strong>Accounts</strong> — names, types (cash/bank/wallet), currency, balances, notes</li>
-      <li><strong>Transactions</strong> — amounts, categories, dates, optional notes</li>
-      <li><strong>Goals</strong> — names, target amounts, monthly contribution, optional photo</li>
-      <li><strong>Budget rule selection</strong> (e.g. 50/30/20)</li>
-      <li><strong>Gamification state</strong> — XP, streak count, unlocked badges</li>
-      <li><strong>Preferences</strong> — your chosen name, avatar emoji, theme, haptics, notification settings</li>
-      <li><strong>App PIN</strong> (if you enable it) — stored using your device's secure enclave (<code>expo-secure-store</code>, Keychain on iOS / Keystore on Android)</li>
+      <li>Accounts, transactions, goals, budget rules, gamification, preferences</li>
+      <li>App PIN — stored as a salted hash verifier in secure device storage (not plaintext)</li>
+      <li>Optional Premium cache flag synced with Play / RevenueCat when online</li>
     </ul>
-    <p>You can wipe ALL of this in one tap via <strong>Settings → Reset all data</strong>. Uninstalling the app also deletes everything.</p>
+    <p><strong>Android Auto Backup</strong> is disabled for app data so your finance ledger is not included in automatic Google device backups. You can still export a backup from Settings.</p>
 
-    <h2>4. What data Money Coach does NOT store</h2>
+    <h2>4. Permissions</h2>
+    <p><strong>Notifications</strong> — local reminders only (no push server).</p>
+    <p><strong>Camera</strong> — optional receipt photos; stay on-device.</p>
+    <p><strong>Photos</strong> — optional goal covers / receipts. On Android the app uses the <strong>system Photo Picker</strong> and does not request broad <code>READ_MEDIA_IMAGES</code>.</p>
+
+    <h2>5. Third parties — Premium billing only</h2>
+    <p>No analytics, advertising, crash reporting, or attribution SDKs.</p>
+    <p>If you buy or restore Premium:</p>
     <ul>
-      <li>Your real name, email, phone number, address, government ID, or any identifier</li>
-      <li>Your bank login, card numbers, or any credentials</li>
-      <li>Your location</li>
-      <li>Your contacts or address book</li>
-      <li>Your microphone or camera feed (no recording)</li>
-      <li>Any data on a server — there is no server</li>
-    </ul>
-
-    <h2>5. Permissions Money Coach requests</h2>
-    <p>The app requests only the minimum needed to function. You can deny any of these and the app will keep working (with reduced features).</p>
-    <h3>Notifications (<code>POST_NOTIFICATIONS</code>)</h3>
-    <p><strong>Why:</strong> To send you local reminders that <em>you</em> schedule — daily money check-ins, streak nudges, and goal-progress prompts.<br/>
-    <strong>What happens:</strong> All notifications are scheduled locally on your device. Money Coach has no push-notification server.<br/>
-    <strong>Opt-out:</strong> Settings → Notifications master toggle, or via your phone's system settings.</p>
-    <h3>Photos (<code>READ_MEDIA_IMAGES</code>)</h3>
-    <p><strong>Why:</strong> So you can attach a personal photo to a savings goal (e.g. a phone you want to buy, a place you want to visit). It's purely visual motivation.<br/>
-    <strong>What happens:</strong> The photo is read from your library and stored in the app's local storage as a small base64 thumbnail. The photo never leaves your device.<br/>
-    <strong>Opt-out:</strong> Deny the prompt; goals will use an emoji instead.</p>
-
-    <h2>6. Third parties</h2>
-    <p>Money Coach contains <strong>no</strong> third-party analytics, advertising, crash reporting, telemetry, or attribution SDKs.</p>
-    <p>We use a handful of standard open-source Expo modules for the app's UI and functionality (e.g. <code>expo-router</code>, <code>expo-notifications</code>, <code>expo-secure-store</code>, <code>expo-image-picker</code>). These modules execute entirely on your device and do not transmit your data anywhere.</p>
-
-    <h2>7. Children's privacy</h2>
-    <p>Money Coach is designed for general audiences (recommended 13+). We do not knowingly collect any data — from anyone — so we have no children's data to mishandle.</p>
-
-    <h2>8. Educational disclaimer</h2>
-    <p>Money Coach is an <strong>educational and personal-tracking tool</strong>. It is <strong>not financial advice, investment advice, tax advice, or legal advice.</strong> The financial simulators use standard textbook formulas and are clearly labelled "Educational only" in-app. Always consult a licensed professional before making real financial decisions.</p>
-
-    <h2>9. Your rights</h2>
-    <p>Because we don't collect or hold your data, there's nothing for us to delete or transfer. <strong>You own your data, on your phone.</strong> You can:</p>
-    <ul>
-      <li><strong>Export</strong> a PDF report from Settings → Export</li>
-      <li><strong>Reset all data</strong> in one tap from Settings</li>
-      <li><strong>Uninstall the app</strong> to remove everything</li>
+      <li><strong>Google Play Billing</strong> processes payment</li>
+      <li><strong>RevenueCat</strong> verifies entitlements (purchase tokens, subscription status, device/app identifiers needed for billing verification)</li>
+      <li>Your ledger is <strong>not</strong> uploaded</li>
     </ul>
 
-    <h2>10. Changes to this policy</h2>
-    <p>If we ever change how the app handles data, we will update this policy and announce the change in-app and in the Play Store release notes. The current architecture is intentionally offline-first.</p>
+    <h2>6. Educational disclaimer</h2>
+    <p>Money Coach is an educational and personal-tracking tool — not financial, investment, tax, or legal advice.</p>
 
-    <h2>11. Contact</h2>
-    <p>For any privacy question, please reach us via the developer email shown on the Money Coach Play Store listing.</p>
+    <h2>7. Your rights</h2>
+    <p>Export or reset data from Settings, or uninstall. Manage Premium subscriptions in Google Play.</p>
+
+    <h2>8. Contact</h2>
+    <p>Use the developer email on the Money Coach Play Store listing.</p>
 
     <footer>
-      © Money Coach. This page is intentionally a single static HTML file so it can be hosted on GitHub Pages, Notion, Vercel, or any simple static host without dependencies.
+      © Money Coach. Full policy source: <code>docs/privacy-policy.md</code>.
     </footer>
   </div>
 </body>
