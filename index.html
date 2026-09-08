@@ -45,12 +45,12 @@
       </span>
       <div>
         <h1>Privacy Policy</h1>
-        <div class="meta">Money Coach · Last updated <time datetime="2026-08-01">2026-08-01</time></div>
+        <div class="meta">Money Coach · Last updated <time datetime="2026-09-08">2026-09-08</time></div>
       </div>
     </header>
 
     <div class="tldr">
-      <p><strong>TL;DR</strong> — Your financial ledger stays on your phone. No analytics or ads. Optional Premium uses <em>Google Play Billing</em> and <em>RevenueCat</em> only to verify purchases — not to upload your money history.</p>
+      <p><strong>TL;DR</strong> — Your financial ledger stays on your phone. No ads and no product-analytics SDK. Production builds send crash reports and performance traces to <em>Sentry</em> so we can fix stability issues; sensitive financial content is redacted and not uploaded. Optional Premium uses <em>Google Play Billing</em> and <em>RevenueCat</em> only to verify purchases — not to upload your money history.</p>
     </div>
 
     <h2>1. Who runs Money Coach</h2>
@@ -62,7 +62,8 @@
       <tr><td>Does the app collect my financial ledger?</td><td><span class="pill">No</span> Accounts, transactions, goals, and balances stay on your phone.</td></tr>
       <tr><td>Does it send my money data to a Money Coach server?</td><td><span class="pill">No</span> There is no ledger backend.</td></tr>
       <tr><td>Do I need to create an account?</td><td><span class="pill">No</span> No sign-up for the core app.</td></tr>
-      <tr><td>Are there ads or trackers?</td><td><span class="pill">No</span> No analytics SDK, no ad network.</td></tr>
+      <tr><td>Are there ads or product-analytics trackers?</td><td><span class="pill">No</span> No advertising SDK and no product-analytics SDK. Crash and performance diagnostics go to <strong>Sentry</strong>.</td></tr>
+      <tr><td>Do you send crash reports?</td><td><span class="pill">Yes</span> Production builds send crash reports and performance traces to <strong>Sentry</strong> to fix stability issues. Ledger contents are scrubbed and not uploaded.</td></tr>
       <tr><td>What about Premium?</td><td>Purchases go through <strong>Google Play Billing</strong>. <strong>RevenueCat</strong> verifies entitlements using billing identifiers — not your transaction history.</td></tr>
     </table>
 
@@ -79,8 +80,9 @@
     <p><strong>Camera</strong> — optional receipt photos; stay on-device.</p>
     <p><strong>Photos</strong> — optional goal covers / receipts. On Android the app uses the <strong>system Photo Picker</strong> and does not request broad <code>READ_MEDIA_IMAGES</code>.</p>
 
-    <h2>5. Third parties — Premium billing only</h2>
-    <p>No analytics, advertising, crash reporting, or attribution SDKs.</p>
+    <h2>5. Third parties</h2>
+    <p><strong>No</strong> advertising SDKs, product-analytics SDKs, or attribution SDKs. Production builds use <strong>Sentry</strong> for crash and performance diagnostics. Optional Premium also uses <strong>Google Play Billing</strong> and <strong>RevenueCat</strong>.</p>
+    <p><strong>Crash / stability monitoring (Sentry):</strong> Production Android and iOS builds send crash reports and performance traces to <strong>Sentry</strong> (<code>@sentry/react-native</code>) so we can diagnose crashes and fix stability issues. Sensitive financial content is redacted on the device before a report is sent. This does <strong>not</strong> upload your accounts, transactions, goals, balances, notes, PIN codes, or backup file contents. Sentry may receive crash logs, diagnostic information (error type, file names, line numbers), performance traces, and app or device identifiers used to group crashes. Traffic uses HTTPS.</p>
     <p>If you buy or restore Premium:</p>
     <ul>
       <li><strong>Google Play Billing</strong> processes payment</li>
