@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy · Money Coach</title>
+  <meta name="description" content="Money Coach privacy policy. On-device ledger. Sentry crash and performance monitoring with financial content redacted. Optional Premium via Google Play Billing and RevenueCat." />
   <style>
     :root {
       --bg: #0D0F12;
@@ -45,16 +46,16 @@
       </span>
       <div>
         <h1>Privacy Policy</h1>
-        <div class="meta">Money Coach · Last updated <time datetime="2026-09-08">2026-09-08</time></div>
+        <div class="meta">Money Coach · Last updated <time datetime="2026-09-16">2026-09-16</time></div>
       </div>
     </header>
 
     <div class="tldr">
-      <p><strong>TL;DR</strong> — Your financial ledger stays on your phone. No ads and no product-analytics SDK. Production builds send crash reports and performance traces to <em>Sentry</em> so we can fix stability issues; sensitive financial content is redacted and not uploaded. Optional Premium uses <em>Google Play Billing</em> and <em>RevenueCat</em> only to verify purchases — not to upload your money history.</p>
+      <p><strong>TL;DR</strong> — Your financial ledger stays on your phone. No ads and no product-analytics SDK. Production builds use <em>Sentry</em> crash and performance monitoring; financial ledger content is redacted and not uploaded. Optional Premium uses <em>Google Play Billing</em> and <em>RevenueCat</em> only to verify purchases — not to upload your money history. Resetting app data does <strong>not</strong> cancel Google Play subscriptions.</p>
     </div>
 
     <h2>1. Who runs Money Coach</h2>
-    <p>Money Coach is a personal-finance education app made by an independent developer. Contact us via the email on the Google Play Store listing.</p>
+    <p>Money Coach is a personal-finance education app made by an independent developer. Privacy questions and deletion requests: <a href="mailto:supfincoach@gmail.com">supfincoach@gmail.com</a> (also on the Google Play Store listing and in-app under About &amp; Legal → Email support).</p>
 
     <h2>2. The short version</h2>
     <table>
@@ -63,15 +64,16 @@
       <tr><td>Does it send my money data to a Money Coach server?</td><td><span class="pill">No</span> There is no ledger backend.</td></tr>
       <tr><td>Do I need to create an account?</td><td><span class="pill">No</span> No sign-up for the core app.</td></tr>
       <tr><td>Are there ads or product-analytics trackers?</td><td><span class="pill">No</span> No advertising SDK and no product-analytics SDK. Crash and performance diagnostics go to <strong>Sentry</strong>.</td></tr>
-      <tr><td>Do you send crash reports?</td><td><span class="pill">Yes</span> Production builds send crash reports and performance traces to <strong>Sentry</strong> to fix stability issues. Ledger contents are scrubbed and not uploaded.</td></tr>
+      <tr><td>Do you send crash reports?</td><td><span class="pill">Yes</span> Production builds use <strong>Sentry</strong> crash and performance monitoring. Financial ledger content is redacted and not uploaded.</td></tr>
       <tr><td>What about Premium?</td><td>Purchases go through <strong>Google Play Billing</strong>. <strong>RevenueCat</strong> verifies entitlements using billing identifiers — not your transaction history.</td></tr>
+      <tr><td>Does a local data reset cancel Premium?</td><td><span class="pill">No</span> Resetting app data or a local wipe does <strong>not</strong> cancel Google Play subscriptions. Manage subscriptions in Google Play.</td></tr>
     </table>
 
     <h2>3. What stays on your device</h2>
     <ul>
       <li>Accounts, transactions, goals, budget rules, gamification, preferences</li>
       <li>App PIN — stored as a salted hash verifier in secure device storage (not plaintext)</li>
-      <li>Optional Premium cache flag synced with Play / RevenueCat when online</li>
+      <li>Optional Premium cache flag synced with Google Play / RevenueCat when online</li>
     </ul>
     <p><strong>Android Auto Backup</strong> is disabled for app data so your finance ledger is not included in automatic Google device backups. You can still export a backup from Settings.</p>
 
@@ -80,27 +82,37 @@
     <p><strong>Camera</strong> — optional receipt photos; stay on-device.</p>
     <p><strong>Photos</strong> — optional goal covers / receipts. On Android the app uses the <strong>system Photo Picker</strong> and does not request broad <code>READ_MEDIA_IMAGES</code>.</p>
 
-    <h2>5. Third parties</h2>
-    <p><strong>No</strong> advertising SDKs, product-analytics SDKs, or attribution SDKs. Production builds use <strong>Sentry</strong> for crash and performance diagnostics. Optional Premium also uses <strong>Google Play Billing</strong> and <strong>RevenueCat</strong>.</p>
-    <p><strong>Crash / stability monitoring (Sentry):</strong> Production Android and iOS builds send crash reports and performance traces to <strong>Sentry</strong> (<code>@sentry/react-native</code>) so we can diagnose crashes and fix stability issues. Sensitive financial content is redacted on the device before a report is sent. This does <strong>not</strong> upload your accounts, transactions, goals, balances, notes, PIN codes, or backup file contents. Sentry may receive crash logs, diagnostic information (error type, file names, line numbers), performance traces, and app or device identifiers used to group crashes. Traffic uses HTTPS.</p>
-    <p>If you buy or restore Premium:</p>
-    <ul>
-      <li><strong>Google Play Billing</strong> processes payment</li>
-      <li><strong>RevenueCat</strong> verifies entitlements (purchase tokens, subscription status, device/app identifiers needed for billing verification)</li>
-      <li>Your ledger is <strong>not</strong> uploaded</li>
-    </ul>
+    <h2>5. Sentry (crash and performance monitoring)</h2>
+    <p>Production builds use <strong>Sentry</strong> crash and performance monitoring (<code>@sentry/react-native</code>) so we can diagnose crashes and fix stability issues.</p>
+    <p>Financial ledger content is <strong>redacted and not uploaded</strong>. Sensitive financial content is redacted on the device before a report is sent. This does <strong>not</strong> upload your accounts, transactions, goals, balances, notes, PIN codes, or backup file contents.</p>
+    <p>Sentry may receive crash logs, diagnostic information (error type, file names, line numbers), performance traces, and app or device identifiers used to group crashes. Traffic uses HTTPS. This is not advertising and not a product-analytics SDK.</p>
 
-    <h2>6. Educational disclaimer</h2>
+    <h2>6. Google Play Billing</h2>
+    <p>Optional <strong>Money Coach Premium</strong> is sold through <strong>Google Play Billing</strong> (Google’s store checkout). Google Play processes payment and manages subscriptions.</p>
+    <p>Resetting app data, erasing local data, or uninstalling the app does <strong>not</strong> cancel Google Play subscriptions. Subscriptions must be managed through Google Play (Google Play account settings / subscriptions).</p>
+
+    <h2>7. RevenueCat</h2>
+    <p>The app uses <strong>RevenueCat</strong> (<code>react-native-purchases</code>) to configure the purchase SDK, fetch offerings, and verify purchase entitlements with Google Play.</p>
+    <p>For billing verification, RevenueCat / Google Play may process purchase tokens, subscription status, subscription-related events, and device or app identifiers needed to confirm that Premium is valid on this install. This is <strong>not</strong> a copy of your accounts, transactions, goals, or balances. Your financial ledger is not uploaded.</p>
+
+    <h2>8. Audience</h2>
+    <p>This app is <strong>not directed to children under 13</strong>.</p>
+    <p>Money Coach is intended for <strong>adults 18 and over</strong> (Play Store target audience: <strong>18+</strong>). We do not knowingly collect children’s personal data for the core offline ledger. Premium billing, if used, is subject to Google Play’s policies.</p>
+
+    <h2>9. Educational disclaimer</h2>
     <p>Money Coach is an educational and personal-tracking tool — not financial, investment, tax, or legal advice.</p>
 
-    <h2>7. Your rights</h2>
-    <p>Export or reset data from Settings, or uninstall. Manage Premium subscriptions in Google Play.</p>
+    <h2>10. Your rights / deletion</h2>
+    <p><strong>Local app data</strong> (ledger, PIN, photos, settings): export from Settings, or use Settings → Erase all local data (Reset all data), or uninstall.</p>
+    <p><strong>Resetting app data or a local wipe does NOT cancel Google Play subscriptions. Subscriptions must be managed through Google Play.</strong> Uninstall also does not cancel a Google Play subscription.</p>
+    <p>Reset and uninstall also do not delete crash or billing records already sent to Sentry, Google Play, or RevenueCat.</p>
+    <p>To request deletion of that third-party service data, email <a href="mailto:supfincoach@gmail.com">supfincoach@gmail.com</a> and ask for a privacy deletion request. The same address is listed in-app under About &amp; Legal → Email support.</p>
 
-    <h2>8. Contact</h2>
-    <p>Use the developer email on the Money Coach Play Store listing.</p>
+    <h2>11. Contact</h2>
+    <p>Privacy questions and third-party deletion requests: <a href="mailto:supfincoach@gmail.com">supfincoach@gmail.com</a> (Play listing and in-app Email support).</p>
 
     <footer>
-      © Money Coach. Full policy source: <code>docs/privacy-policy.md</code>.
+      © Money Coach. Last updated 2026-09-16. Full policy source: <code>docs/privacy-policy.md</code>.
     </footer>
   </div>
 </body>
